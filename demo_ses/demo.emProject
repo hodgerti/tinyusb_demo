@@ -1,0 +1,9 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="demo" target="8" version="2">
+  <project Name="demo">
+    <configuration
+      Name="Common"
+      project_directory=""
+      project_type="Object file" />
+  </project>
+</solution>

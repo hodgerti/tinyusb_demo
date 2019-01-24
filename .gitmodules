@@ -1,3 +1,6 @@
 [submodule "demo/demo/tinyusb"]
 	path = demo/demo/tinyusb
 	url = https://github.com/hodgerti/tinyusb.git
+[submodule "demo_ses/lib/tinyusb"]
+	path = demo_ses/lib/tinyusb
+	url = https://github.com/hodgerti/tinyusb.git
