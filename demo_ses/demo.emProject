@@ -3,25 +3,48 @@
   <project Name="demo">
     <configuration
       Name="Common"
+      arm_architecture="v8M_Mainline"
+      arm_core_type="Cortex-M33"
+      arm_endian="Little"
+      arm_fp_abi="Soft"
+      arm_fpu_type="None"
+      arm_linker_heap_size="1024"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="1024"
+      arm_linker_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="RWX 10000000,00200000,CDCDCDCD"
+      arm_target_device_name="SSE-200-MPS3_M33_0"
+      arm_target_interface_type="SWD"
+      debug_target_connection="J-Link"
+      link_linker_script_file="$(ProjectDir)/SEGGER_Flash.icf"
+      linker_output_format="hex"
+      linker_section_placements_segments="RAM RWX 0x10000000 0x00200000"
       project_directory=""
-      project_type="Object file" />
+      project_type="Executable" />
     <folder Name="src">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
       <file file_name="src/main.c" />
       <file file_name="src/msc_app.c" />
       <file file_name="src/msc_disk_ram.c" />
+      <file file_name="src/tusb_config.h" />
       <file file_name="src/tusb_descriptors.c" />
+    </folder>
+    <folder Name="system">
+      <file file_name="system/SEGGER_HardFaultHandler.c" />
+      <file file_name="system/SEGGER_RTT.c" />
+      <file file_name="system/SEGGER_RTT_Syscalls_SES.c" />
+      <file file_name="system/Cortex_M_Startup.s" />
+      <file file_name="system/HardFaultHandler.S" />
+      <file file_name="system/SEGGER_Flash.icf" />
+      <file file_name="system/SEGGER_RTT.h" />
+      <file file_name="system/SEGGER_RTT_Conf.h" />
+      <file file_name="system/SEGGER_THUMB_Startup.s" />
     </folder>
     <folder Name="lib">
       <folder Name="tinyusb">
         <folder Name="hw">
-          <folder Name="bsp">
-            <folder Name="metro_m0_express">
-              <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/samd21g18a_flash.ld" />
-              <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/board_metro_m0_express.c" />
-            </folder>
-          </folder>
           <folder Name="mcu">
-            <folder Name="michrochip">
+            <folder Name="microchip">
               <folder Name="samd">
                 <folder Name="asf4">
                   <folder Name="samd21">
@@ -37,7 +60,6 @@
                       </folder>
                       <folder Name="pm">
                         <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/pm/hpl_pm.c" />
-                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/pm/hpl_pm_base.h" />
                       </folder>
                       <folder Name="sysctrl">
                         <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/sysctrl/hpl_sysctrl.c" />
@@ -224,18 +246,34 @@
                       </folder>
                     </folder>
                   </folder>
+                  <folder Name="samd51">
+                    <folder Name="hpl">
+                      <folder Name="pm">
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd51/hpl/pm/hpl_pm_base.h" />
+                      </folder>
+                    </folder>
+                  </folder>
                 </folder>
               </folder>
             </folder>
           </folder>
+          <folder Name="bsp">
+            <folder Name="metro_m0_express">
+              <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/board_metro_m0_express.c" />
+            </folder>
+          </folder>
+          <file file_name="lib/tinyusb/src/tusb.h" />
+          <file file_name="lib/tinyusb/src/tusb_config.h" />
+          <file file_name="lib/tinyusb/src/tusb_hal.h" />
+          <file file_name="lib/tinyusb/src/tusb_option.h" />
         </folder>
         <folder Name="src">
           <folder Name="common">
             <file file_name="lib/tinyusb/src/common/tusb_fifo.c" />
           </folder>
           <folder Name="device">
+            <file file_name="lib/tinyusb/src/device/usbd.c" />
             <file file_name="lib/tinyusb/src/device/usbd_auto_desc.c" />
-            <file file_name="lib/tinyusb/src/device/usbd_control.c" />
           </folder>
           <folder Name="class">
             <folder Name="msc">
@@ -256,13 +294,19 @@
               </folder>
             </folder>
           </folder>
-          <file file_name="lib/tinyusb/src/tusb_option.h" />
-          <file file_name="lib/tinyusb/src/tusb.h" />
-          <file file_name="lib/tinyusb/src/tusb_config.h" />
-          <file file_name="lib/tinyusb/src/tusb_hal.h" />
         </folder>
       </folder>
     </folder>
   </project>
-  <configuration Name="Metro M0 Express" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG"
+    gcc_debugging_level="Level 3"
+    gcc_optimization_level="None" />
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_debugging_level="None"
+    gcc_omit_frame_pointer="Yes"
+    gcc_optimization_level="Level 1" />
 </solution>
