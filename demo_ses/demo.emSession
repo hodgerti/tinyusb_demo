@@ -16,16 +16,8 @@
   <ProjectSessionItem path="demo;demo;lib"/>
   <ProjectSessionItem path="demo;demo;lib;tinyusb"/>
   <ProjectSessionItem path="demo;demo;lib;tinyusb;hw"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;bsp"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;bsp;metro_m0_express"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd;asf4"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd;asf4;samd21"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd;asf4;samd21;hpl"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd;asf4;samd21;hpl;pm"/>
-  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;mcu;michrochip;samd;asf4;samd21;hpl;sysctrl"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;class"/>
   <ProjectSessionItem path="demo;demo;src"/>
  </Project>
  <Register1/>
@@ -50,6 +42,8 @@
  <Watch4>
   <Watches active="0" update="Never"/>
  </Watch4>
- <Files/>
- <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="Simulator" buildConfiguration="Common" debugSearchFileMap="" fileDialogInitialDirectory="D:/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/sysctrl" debugSearchPath="" autoConnectCapabilities="4543"/>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="lib/tinyusb/src/tusb_config.h" selected="1" top="0" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="Simulator" buildConfiguration="Metro M0 Express" debugSearchFileMap="" fileDialogInitialDirectory="D:/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/src" debugSearchPath="" autoConnectCapabilities="4543"/>
 </session>

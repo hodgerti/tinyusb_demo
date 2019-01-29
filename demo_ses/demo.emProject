@@ -17,6 +17,7 @@
           <folder Name="bsp">
             <folder Name="metro_m0_express">
               <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/samd21g18a_flash.ld" />
+              <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/board_metro_m0_express.c" />
             </folder>
           </folder>
           <folder Name="mcu">
@@ -36,9 +37,190 @@
                       </folder>
                       <folder Name="pm">
                         <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/pm/hpl_pm.c" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/pm/hpl_pm_base.h" />
                       </folder>
                       <folder Name="sysctrl">
                         <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/sysctrl/hpl_sysctrl.c" />
+                      </folder>
+                      <folder Name="port">
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hpl/port/hpl_gpio_base.h" />
+                      </folder>
+                    </folder>
+                    <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/atmel_start.h" />
+                    <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/atmel_start_pins.h" />
+                    <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/driver_init.h" />
+                    <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/usb_start.h" />
+                    <folder Name="config">
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_adc_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_dac_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_dmac_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_gclk_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_nvmctrl_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_pm_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_rtc_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_sercom_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_sysctrl_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_systick_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_tc_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/hpl_usb_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/peripheral_clk_config.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/config/usbd_config.h" />
+                    </folder>
+                    <folder Name="include">
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/component-version.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/sam.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21e15a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21e16a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21e17a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21e18a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g15a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g16a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g17a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g17au.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g18a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21g18au.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21j15a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21j16a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21j17a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samd21j18a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21e16a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21e17a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21e18a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21e19a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21g16a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21g17a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/samr21g18a.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/system_samd21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/system_samr21.h" />
+                    </folder>
+                    <folder Name="hal">
+                      <folder Name="include">
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_adc_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_atomic.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_calendar.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_dac_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_delay.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_flash.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_gpio.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_i2c_m_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_init.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_io.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_pwm.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_sleep.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_spi_m_dma.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_spi_m_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_timer.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_usart_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hal_usb_device.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_adc_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_adc_dma.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_adc_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_calendar.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_core.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_dac_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_dac_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_delay.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_dma.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_flash.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_gpio.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_i2c_m_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_i2c_m_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_i2c_s_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_i2c_s_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_init.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_irq.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_missing_features.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_pwm.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_reset.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_sleep.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_dma.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_m_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_m_dma.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_m_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_s_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_s_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_spi_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_time_measure.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_timer.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usart.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usart_async.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usart_sync.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usb.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usb_device.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_usb_host.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/include/hpl_user_area.h" />
+                      </folder>
+                      <folder Name="utils">
+                        <folder Name="include">
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/compiler.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/err_codes.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/events.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/parts.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_assert.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_decrement_macro.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_event.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_increment_macro.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_list.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_recursion_macro.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_repeat_macro.h" />
+                          <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hal/utils/include/utils_ringbuffer.h" />
+                        </folder>
+                      </folder>
+                    </folder>
+                    <folder Name="hri">
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_ac_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_adc_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_dac_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_dmac_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_dsu_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_eic_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_evsys_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_gclk_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_hmatrixb_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_i2s_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_mtb_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_nvic_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_nvmctrl_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_pac_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_pm_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_port_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_rtc_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_sercom_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_sysctrl_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_systemcontrol_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_systick_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_tc_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_tcc_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_usb_d21.h" />
+                      <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/hri/hri_wdt_d21.h" />
+                    </folder>
+                    <folder Name="CMSIS">
+                      <folder Name="Include">
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/arm_common_tables.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/arm_const_structs.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/arm_math.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/cmsis_armcc.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/cmsis_armclang.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/cmsis_compiler.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/cmsis_gcc.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_armv8mbl.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_armv8mml.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm0.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm0plus.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm3.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm4.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm7.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm23.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_cm33.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_sc000.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/core_sc300.h" />
+                        <file file_name="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/CMSIS/Include/tz_context.h" />
                       </folder>
                     </folder>
                   </folder>
@@ -47,7 +229,40 @@
             </folder>
           </folder>
         </folder>
+        <folder Name="src">
+          <folder Name="common">
+            <file file_name="lib/tinyusb/src/common/tusb_fifo.c" />
+          </folder>
+          <folder Name="device">
+            <file file_name="lib/tinyusb/src/device/usbd_auto_desc.c" />
+            <file file_name="lib/tinyusb/src/device/usbd_control.c" />
+          </folder>
+          <folder Name="class">
+            <folder Name="msc">
+              <file file_name="lib/tinyusb/src/class/msc/msc_device.c" />
+            </folder>
+            <folder Name="cdc">
+              <file file_name="lib/tinyusb/src/class/cdc/cdc_device.c" />
+            </folder>
+            <folder Name="hid">
+              <file file_name="lib/tinyusb/src/class/hid/hid_device.c" />
+            </folder>
+          </folder>
+          <file file_name="lib/tinyusb/src/tusb.c" />
+          <folder Name="portable">
+            <folder Name="microchip">
+              <folder Name="samd21">
+                <file file_name="lib/tinyusb/src/portable/microchip/samd21/dcd_samd21.c" />
+              </folder>
+            </folder>
+          </folder>
+          <file file_name="lib/tinyusb/src/tusb_option.h" />
+          <file file_name="lib/tinyusb/src/tusb.h" />
+          <file file_name="lib/tinyusb/src/tusb_config.h" />
+          <file file_name="lib/tinyusb/src/tusb_hal.h" />
+        </folder>
       </folder>
     </folder>
   </project>
+  <configuration Name="Metro M0 Express" />
 </solution>
