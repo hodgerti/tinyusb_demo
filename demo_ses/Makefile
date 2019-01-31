@@ -1,7 +1,7 @@
 MAIN_MAKE := $(abspath $(lastword $(MAKEFILE_LIST)))
 TOP := $(patsubst %Makefile,%,$(THIS_MAKEFILE))
 TINYUSB := lib/tinyusb
-OUTPUT := output
+OUTPUT := Output
 
 # Don't know what these are for yet
 LD_FILE = $(TINYUSB)/hw/bsp/metro_m0_express/samd21g18a_flash.ld

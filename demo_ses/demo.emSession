@@ -14,7 +14,15 @@
   <ProjectSessionItem path="demo"/>
   <ProjectSessionItem path="demo;demo"/>
   <ProjectSessionItem path="demo;demo;lib"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;bsp"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;class"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;portable"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;portable;microchip"/>
   <ProjectSessionItem path="demo;demo;src"/>
+  <ProjectSessionItem path="demo;demo;system"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -39,8 +47,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="main.c" selected="1" top="33" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="system/SEGGER_THUMB_Startup.s" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="src/tusb_descriptors.c" selected="1" top="18" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="D:/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/src" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Metro M0 Express" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/id181/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/src" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

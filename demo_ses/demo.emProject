@@ -261,11 +261,9 @@
             <folder Name="metro_m0_express">
               <file file_name="lib/tinyusb/hw/bsp/metro_m0_express/board_metro_m0_express.c" />
             </folder>
+            <file file_name="lib/tinyusb/hw/bsp/ansi_escape.h" />
+            <file file_name="lib/tinyusb/hw/bsp/board.h" />
           </folder>
-          <file file_name="lib/tinyusb/src/tusb.h" />
-          <file file_name="lib/tinyusb/src/tusb_config.h" />
-          <file file_name="lib/tinyusb/src/tusb_hal.h" />
-          <file file_name="lib/tinyusb/src/tusb_option.h" />
         </folder>
         <folder Name="src">
           <folder Name="common">
@@ -294,9 +292,34 @@
               </folder>
             </folder>
           </folder>
+          <file file_name="lib/tinyusb/src/tusb.h" />
+          <file file_name="lib/tinyusb/src/tusb_hal.h" />
+          <file file_name="lib/tinyusb/src/tusb_option.h" />
         </folder>
       </folder>
     </folder>
+    <configuration
+      Name="Debug"
+      arm_architecture="v6M"
+      arm_core_type="Cortex-M0+"
+      arm_linker_variant="GNU"
+      gcc_debugging_level="Level 2"
+      gcc_enable_all_warnings="Yes"
+      linker_output_format="None"
+      linker_section_placement_file="$(ProjectDir)/lib/tinyusb/examples/device/cdc_msc_hid/ses/samd21/flash_placement.xml" />
+    <configuration
+      Name="Metro M0 Express"
+      arm_architecture="v8M_Mainline"
+      arm_core_type="Cortex-M33"
+      arm_endian="Little"
+      arm_fp_abi="Soft"
+      arm_fpu_type="None"
+      arm_simulator_memory_simulation_parameter="RWX 10000000,00200000,CDCDCDCD"
+      arm_target_device_name="SSE-200-MPS3_M33_0"
+      arm_target_interface_type="SWD"
+      debug_register_definition_file="$(ProjectDir)/lib/tinyusb/examples/device/cdc_msc_hid/ses/samd21/ATSAMD21G18A_Registers.xml"
+      debug_target_connection="J-Link"
+      linker_section_placements_segments="RAM RWX 0x10000000 0x00200000" />
   </project>
   <configuration
     Name="Debug"
@@ -309,4 +332,5 @@
     gcc_debugging_level="None"
     gcc_omit_frame_pointer="Yes"
     gcc_optimization_level="Level 1" />
+  <configuration Name="Metro M0 Express" />
 </solution>
