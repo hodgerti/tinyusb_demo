@@ -48,7 +48,9 @@
  </Watch4>
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="system/SEGGER_THUMB_Startup.s" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="src/tusb_descriptors.c" selected="1" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="src/tusb_descriptors.c" selected="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="src/msc_disk_ram.c" selected="0" top="18" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="38" useTextEdit="1" useBinaryEdit="0" left="0" path="src/msc_app.c" selected="1" top="33" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Metro M0 Express" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/id181/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/src" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Metro M0 Express" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/id181/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/hw/bsp" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
