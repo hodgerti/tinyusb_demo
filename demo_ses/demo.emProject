@@ -20,19 +20,19 @@
       build_treat_warnings_as_errors="Yes"
       c_preprocessor_definitions="__SAMD21G18A__;__SAMD21_FAMILY;__SAM_D21_SUBFAMILY;ARM_MATH_CM0PLUS;FLASH_PLACEMENT=1;USE_SIMPLE_ASSERT;CONF_XOSC32K_CONFIG=1;CONF_OSC32K_ENABLE=1;CONF_OSC32K_EN32K=1;CONF_XOSC32K_STARTUP=CONF_XOSC32K_STARTUP_TIME_2000092MCS;CONF_DFLL_ONDEMAND=0;CONF_DFLL_OVERWRITE_CALIBRATION=0;BOARD_METRO_M0_EXPRESS;CFG_TUSB_MCU=OPT_MCU_SAMD21"
       c_user_include_directories="./src;$(lib_tinyusb)/hw;$(lib_tinyusb)/src;$(asf4Dir);$(asf4Dir)/CMSIS/Include;$(asf4Dir)/include;$(asf4Dir)/config;$(asf4Dir)/hri;$(asf4Dir)/hal/include;$(asf4Dir)/hal/utils/include;$(asf4Dir)/hpl/port;$(asf4Dir)/hpl/gclk;$(asf4Dir)/hpl/pm"
-      debug_register_definition_file="$(examplesamd21)/ATSAMD21G18A_Registers.xml"
+      debug_register_definition_file="./system/ATSAMD21G18A_Registers.xml"
       debug_target_connection="J-Link"
       gcc_enable_all_warnings="Yes"
       gcc_entry_point="Reset_Handler"
       link_use_linker_script_file="No"
-      linker_memory_map_file="$(examplesamd21)/ATSAMD21G18A_MemoryMap.xml"
-      linker_section_placement_file="$(examplesamd21)/flash_placement.xml"
+      linker_memory_map_file="./system/ATSAMD21G18A_MemoryMap.xml"
+      linker_section_placement_file="./system/flash_placement.xml"
       linker_section_placements_segments="FLASH RX 0x00000000 0x00080000;RAM RWX 0x20000000 0x00030000"
-      macros="DeviceFamily=SAMD21;Target=ATSAMD21G18A;Placement=Flash;lib_tinyusb=./lib/tinyusb;examplesamd21=./lib/tinyusb/examples/device/cdc_msc_hid/ses/samd21;asf4Dir=./lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21"
+      macros="DeviceFamily=SAMD21;Target=ATSAMD21G18A;Placement=Flash;lib_tinyusb=./lib/tinyusb;asf4Dir=./lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21"
       project_directory=""
       project_type="Executable"
       target_reset_script="Reset();"
-      target_script_file="$(examplesamd21)SAMD21_Target.js"
+      target_script_file="./system/SAMD21_Target.js"
       target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
     <folder
       Name="src"
@@ -43,13 +43,17 @@
     <folder Name="system">
       <file file_name="system/SEGGER_HardFaultHandler.c" />
       <file file_name="system/SEGGER_RTT.c" />
-      <file file_name="system/SEGGER_RTT_Syscalls_SES.c" />
-      <file file_name="system/Cortex_M_Startup.s" />
-      <file file_name="system/HardFaultHandler.S" />
-      <file file_name="system/SEGGER_Flash.icf" />
       <file file_name="system/SEGGER_RTT.h" />
+      <file file_name="system/SEGGER_RTT_Syscalls_SES.c" />
       <file file_name="system/SEGGER_RTT_Conf.h" />
-      <file file_name="system/SEGGER_THUMB_Startup.s" />
+      <file file_name="system/SEGGER_Flash.icf" />
+      <file file_name="system/ATSAMD21G18A_MemoryMap.xml" />
+      <file file_name="system/ATSAMD21G18A_Registers.xml" />
+      <file file_name="system/ATSAMD21G18A_Vectors.s" />
+      <file file_name="system/flash_placement.xml" />
+      <file file_name="system/SAMD21_Startup.s" />
+      <file file_name="system/SAMD21_Target.js" />
+      <file file_name="system/thumb_crt0.s" />
     </folder>
 	<folder Name="lib">
 	  <folder Name="tinyusb">
