@@ -46,7 +46,6 @@
       <file file_name="system/SEGGER_RTT.h" />
       <file file_name="system/SEGGER_RTT_Syscalls_SES.c" />
       <file file_name="system/SEGGER_RTT_Conf.h" />
-      <file file_name="system/SEGGER_Flash.icf" />
       <file file_name="system/ATSAMD21G18A_MemoryMap.xml" />
       <file file_name="system/ATSAMD21G18A_Registers.xml" />
       <file file_name="system/ATSAMD21G18A_Vectors.s" />
