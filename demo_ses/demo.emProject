@@ -105,8 +105,8 @@
       arm_linker_variant="GNU"
       gcc_debugging_level="Level 2"
       gcc_enable_all_warnings="Yes"
-      linker_output_format="None"
-      linker_section_placement_file="$(ProjectDir)/lib/tinyusb/examples/device/cdc_msc_hid/ses/samd21/flash_placement.xml" />
+      linker_output_format="bin"
+      linker_section_placement_file="./system/flash_placement.xml" />
     <configuration
       Name="Metro M0 Express"
       arm_architecture="v8M_Mainline"
