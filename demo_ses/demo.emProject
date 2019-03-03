@@ -26,6 +26,7 @@
       gcc_entry_point="Reset_Handler"
       link_use_linker_script_file="No"
       linker_memory_map_file="./system/ATSAMD21G18A_MemoryMap.xml"
+      linker_output_format="bin"
       linker_section_placement_file="./system/flash_placement.xml"
       linker_section_placements_segments="FLASH RX 0x00000000 0x00080000;RAM RWX 0x20000000 0x00030000"
       macros="DeviceFamily=SAMD21;Target=ATSAMD21G18A;Placement=Flash;lib_tinyusb=./lib/tinyusb;asf4Dir=./lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21"
@@ -105,7 +106,7 @@
       arm_linker_variant="GNU"
       gcc_debugging_level="Level 2"
       gcc_enable_all_warnings="Yes"
-      linker_output_format="bin"
+      linker_output_format="None"
       linker_section_placement_file="./system/flash_placement.xml" />
     <configuration
       Name="Metro M0 Express"
@@ -119,6 +120,7 @@
       arm_target_interface_type="SWD"
       debug_register_definition_file="$(ProjectDir)/lib/tinyusb/examples/device/cdc_msc_hid/ses/samd21/ATSAMD21G18A_Registers.xml"
       debug_target_connection="J-Link"
+	  linker_post_build_command='bossac -e -w -v -R --port=COM6 output/"$(Configuration)"/Exe/demo.bin'
       linker_section_placements_segments="RAM RWX 0x10000000 0x00200000" />
   </project>
   <configuration

@@ -15,7 +15,12 @@
   <ProjectSessionItem path="demo;demo"/>
   <ProjectSessionItem path="demo;demo;lib"/>
   <ProjectSessionItem path="demo;demo;lib;tinyusb"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;bsp"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;hw;bsp;metro_m0_express"/>
   <ProjectSessionItem path="demo;demo;lib;tinyusb;src"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;class"/>
+  <ProjectSessionItem path="demo;demo;lib;tinyusb;src;class;cdc"/>
   <ProjectSessionItem path="demo;demo;lib;tinyusb;src;device"/>
   <ProjectSessionItem path="demo;demo;src"/>
   <ProjectSessionItem path="demo;demo;system"/>
@@ -49,8 +54,12 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="60" useTextEdit="1" useBinaryEdit="0" left="0" path="system/SAMD21_Startup.s" selected="0" top="2" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="93" useTextEdit="1" useBinaryEdit="0" left="0" path="lib/tinyusb/src/device/usbd.c" selected="0" top="62" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="5" useTextEdit="1" useBinaryEdit="0" left="0" path="system/ATSAMD21G18A_MemoryMap.xml" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="18" useTextEdit="1" useBinaryEdit="0" left="0" path="system/SAMD21_Target.js" selected="1" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditRight" x="0" y="5" useTextEdit="1" useBinaryEdit="0" left="20" path="system/flash_placement.xml" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="14" useTextEdit="1" useBinaryEdit="0" left="0" path="system/SAMD21_Target.js" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="351" useTextEdit="1" useBinaryEdit="0" left="0" path="lib/tinyusb/src/class/cdc/cdc_device.c" selected="0" top="229" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="54" useTextEdit="1" useBinaryEdit="0" left="0" path="lib/tinyusb/hw/bsp/metro_m0_express/board_metro_m0_express.c" selected="1" top="36" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="82" useTextEdit="1" useBinaryEdit="0" left="0" path="lib/tinyusb/hw/mcu/microchip/samd/asf4/samd21/include/pio/samd21g18a.h" selected="0" top="44" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="42" y="13" useTextEdit="1" useBinaryEdit="0" left="20" path="system/flash_placement.xml" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditRight" x="0" y="56" useTextEdit="1" useBinaryEdit="0" left="0" path="src/main.c" selected="0" top="48" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="demo" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Metro M0 Express" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/id181/Documents/ECE_362/tinyusb_demo/demo_ses/lib/tinyusb/hw/bsp" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
