@@ -1,0 +1,12 @@
+Things to test in it:
+- Setting config and interfaces
+	x Fill out data sheet of endpoints and interfaces and config and compare to expected
+	x Send messages to the different interfaces
+- Iso:
+	x Stream data periodically and verify streamed data was periodic
+- Bulk:
+	x Transfer huge bits of data and verify that it was correctly recieved
+- Control:
+	x Run through different custom controls
+- Interrupt:
+	x Flash LED with interrupt
