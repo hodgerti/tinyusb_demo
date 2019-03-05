@@ -34,17 +34,17 @@
 [X]      bInterfaceClass=10 / bInterfaceClass=TODO
 [X]      bInterfaceProtocol=0 / bInterfaceProtocol=TODO
 [X]      iInterface=0 / iInterface=TODO
-[M]        Endpoint:
-[M]          bLength=7 / None
-[M]          bEndpointAddress=2 / None
-[M]          bInterval=0 / None
-[M]          bDescriptorType=5 / None
-[M]          bmAttributes=2 / None
-[M]          wMaxPacketSize=64 / None
-[M]        Endpoint:
-[M]          bLength=7 / None
-[M]          bEndpointAddress=130 / None
-[M]          bInterval=0 / None
-[M]          bDescriptorType=5 / None
-[M]          bmAttributes=2 / None
-[M]          wMaxPacketSize=64 / None
+ -         Endpoint:
+[X]          bLength=7 / bLength=TODO
+[X]          bEndpointAddress=2 / bEndpointAddress=TODO
+[X]          bInterval=0 / bInterval=TODO
+[X]          bDescriptorType=5 / bDescriptorType=TODO
+[X]          bmAttributes=2 / bmAttributes=TODO
+[X]          wMaxPacketSize=64 / wMaxPacketSize=TODO
+ -         Endpoint:
+[X]          bLength=7 / bLength=TODO
+[X]          bEndpointAddress=130 / bEndpointAddress=TODO
+[X]          bInterval=0 / bInterval=TODO
+[X]          bDescriptorType=5 / bDescriptorType=TODO
+[X]          bmAttributes=2 / bmAttributes=TODO
+[X]          wMaxPacketSize=64 / wMaxPacketSize=TODO

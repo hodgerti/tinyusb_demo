@@ -1,10 +1,16 @@
+import ctypes as c
 import sys
 from os import environ
 from os.path import exists
 import usb.core
 import usb.util
 
+
 from usb.backend import libusb1
+
+from usb_def import (MSC_CLASS,
+                     CDC_CLASS,
+                     CDC_DATA)
 
 ###########################################
 # Definitions
@@ -13,6 +19,8 @@ DATA_SHEET_DIR = './data_sheets/'
 CONFIGS_DATA_SHEET = '{}config_data_sheet.txt'.format(DATA_SHEET_DIR)
 DEMO_CONFIGS_DATA_SHEET = '{}demo_config_data_sheet.txt'.format(DATA_SHEET_DIR)
 CONFIGS_RESULTS_SHEET = '{}configs_results.txt'.format(DATA_SHEET_DIR)
+BULK_FILE = '{}bulk_data.txt'.format(DATA_SHEET_DIR)
+TINY_BULK_FILE = '{}tiny_bulk_data.txt'.format(DATA_SHEET_DIR)
 
 PASS_MARK = '[0]'
 FAIL_MARK = '[X]'
@@ -45,16 +53,20 @@ def string_to_hex(s):
     #     s_ += '0'
     return s_
 
-def init(idVendor=0xcafe, idProduct=0x0001):
-    # set environment
-    environ['PYUSB_DEBUG'] = 'debug'
-    # find our device
-    be = libusb1.get_backend()
-    _dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=be)
-    # was it found?
-    if _dev is None:
-        raise ValueError('Device not found')
-    return _dev
+def find_intf_class(cfg, cls=MSC_CLASS):
+    intf = usb.util.find_descriptor(cfg, bInterfaceClass=cls)
+    assert intf is not None
+    return intf
+
+def find_bulk_out(e):
+    return usb.util.endpoint_direction(e.bEndpointAddress) == usb.util.ENDPOINT_OUT
+
+def read_chunk(file, size):
+    while True:
+        data = file.read(size)
+        if not data:
+            break
+        yield data
 
 def read_configs_sheet(f_name=DEMO_CONFIGS_DATA_SHEET):
     assert exists(f_name)
@@ -137,6 +149,7 @@ def read_configs_dev(dev=dev):
         configs.append(cfg_dict)
     return configs
 
+# TODO: Swap interfaces being compared if comparison fails
 def compare_configs(act_configs, exp_configs, f_name=CONFIGS_RESULTS_SHEET):
     with open(f_name, 'wb') as f_out:
         for idx, cfg in enumerate(act_configs):
@@ -184,6 +197,26 @@ def compare_configs(act_configs, exp_configs, f_name=CONFIGS_RESULTS_SHEET):
                         else:
                             f_out.write('{}{}{}={} / {}={}\n'.format(PASS_MARK, EP_DETAIL_SPACE, field, ep[field], field, cur_exp_ep[field]))
 
+def stream_file(cfg, f_name=TINY_BULK_FILE):
+    intf = find_intf_class(cfg, CDC_DATA)
+    assert intf is not None
+    endpoint = usb.util.find_descriptor(intf, custom_match=find_bulk_out)
+    assert endpoint is not None
+    with open(f_name, 'rb') as f_in:
+        for data in read_chunk(f_in, endpoint.wMaxPacketSize):
+            endpoint.write(data)
+
+def init(idVendor=0xcafe, idProduct=0x0001):
+    # set environment
+    environ['PYUSB_DEBUG'] = 'debug'
+    # find our device
+    be = libusb1.get_backend()
+    _dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=be)
+    # was it found?
+    if _dev is None:
+        raise ValueError('Device not found')
+    return _dev
+
 ###########################################
 # Main
 ###########################################
@@ -192,36 +225,13 @@ dev = init()
 act_configs = read_configs_dev(dev)
 exp_configs = read_configs_sheet()
 compare_configs(act_configs, exp_configs)
-
-# dev.set_configuration(5)
-# cfg = util.find_descriptor(dev, bConfigurationValue=5)
-# cfg.set()
+write_configs_sheet(act_configs)
 
 dev.set_configuration()
 cfg = dev.get_active_configuration()
-
-def ep_is_out(ep):
-    return usb.util.endpoint_direction(ep.bEndpointAddress) == usb.util.ENDPOINT_OUT
-
-def interface_has_out_endpoint(intf):
-    for ep in intf:
-        if ep_is_out(ep):
-            return True
-
-
-# intf = usb.util.find_descriptor(dev, bInterfaceNumber=???)
-# dev.set_interface_altsetting(intf) / intf.set_altsetting()
-intf = usb.util.find_descriptor(cfg, custom_match=interface_has_out_endpoint)
+stream_file(cfg)
 
 # assert dev.ctrl_transfer(0x40, CTRL_LOOPBACK_WRITE, 0, 0, msg) == len(msg)
 # ret_msg = dev.ctrl_transfer(0xC0, CTRL_LOOPBACK_READ, 0, 0, len(msg))
 # sret = ''.join([chr(x) for x in ret_msg])
 # assert sret == msg
-
-ep = usb.util.find_descriptor(intf, custom_match=ep_is_out)
-
-assert ep is not None
-
-# write the data
-msg = 'test'
-assert len(dev.write(1, msg, 100)) == len(msg)
