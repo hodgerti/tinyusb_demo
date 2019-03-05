@@ -1,0 +1,50 @@
+ - Configuration:
+[X]  bLength=9 / bLength=TODO
+[X]  wTotalLength=67 / wTotalLength=TODO
+[X]  bConfigurationValue=1 / bConfigurationValue=TODO
+[X]  bDescriptorType=2 / bDescriptorType=TODO
+[X]  iConfiguration=0 / iConfiguration=TODO
+[X]  bMaxPower=50 / bMaxPower=TODO
+[X]  bmAttributes=128 / bmAttributes=TODO
+[X]  bNumInterfaces=2 / bNumInterfaces=TODO
+ -     Interface:
+[X]      bLength=9 / bLength=TODO
+[X]      bAlternateSetting=0 / bAlternateSetting=TODO
+[X]      bInterfaceNumber=0 / bInterfaceNumber=TODO
+[X]      bNumEndpoints=1 / bNumEndpoints=TODO
+[X]      bDescriptorType=4 / bDescriptorType=TODO
+[X]      bInterfaceSubClass=2 / bInterfaceSubClass=TODO
+[X]      bInterfaceClass=2 / bInterfaceClass=TODO
+[X]      bInterfaceProtocol=1 / bInterfaceProtocol=TODO
+[X]      iInterface=4 / iInterface=TODO
+ -         Endpoint:
+[X]          bLength=7 / bLength=TODO
+[X]          bEndpointAddress=129 / bEndpointAddress=TODO
+[X]          bInterval=16 / bInterval=TODO
+[X]          bDescriptorType=5 / bDescriptorType=TODO
+[X]          bmAttributes=3 / bmAttributes=TODO
+[X]          wMaxPacketSize=8 / wMaxPacketSize=TODO
+ -     Interface:
+[X]      bLength=9 / bLength=TODO
+[X]      bAlternateSetting=0 / bAlternateSetting=TODO
+[X]      bInterfaceNumber=1 / bInterfaceNumber=TODO
+[X]      bNumEndpoints=2 / bNumEndpoints=TODO
+[X]      bDescriptorType=4 / bDescriptorType=TODO
+[X]      bInterfaceSubClass=0 / bInterfaceSubClass=TODO
+[X]      bInterfaceClass=10 / bInterfaceClass=TODO
+[X]      bInterfaceProtocol=0 / bInterfaceProtocol=TODO
+[X]      iInterface=0 / iInterface=TODO
+[M]        Endpoint:
+[M]          bLength=7 / None
+[M]          bEndpointAddress=2 / None
+[M]          bInterval=0 / None
+[M]          bDescriptorType=5 / None
+[M]          bmAttributes=2 / None
+[M]          wMaxPacketSize=64 / None
+[M]        Endpoint:
+[M]          bLength=7 / None
+[M]          bEndpointAddress=130 / None
+[M]          bInterval=0 / None
+[M]          bDescriptorType=5 / None
+[M]          bmAttributes=2 / None
+[M]          wMaxPacketSize=64 / None

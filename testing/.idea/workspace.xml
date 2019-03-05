@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ee15fd1-c269-4aaa-8a02-3f16edf2f5a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../demo_ses/demo.emProject" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_ses/demo.emProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo_ses/demo.emSession" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_ses/demo.emSession" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demo_ses/lib/tinyusb" beforeDir="false" afterPath="$PROJECT_DIR$/../demo_ses/lib/tinyusb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,26 +13,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.6971246">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+                <state relative-caret-position="408">
+                  <caret line="174" column="62" selection-start-line="174" selection-start-column="62" selection-end-line="174" selection-end-column="62" />
                   <folding>
-                    <element signature="e#165#180#0" expanded="true" />
+                    <element signature="e#0#10#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python27/Lib/site-packages/usb/core.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="21114">
-                  <caret line="1251" column="23" selection-start-line="1251" selection-start-column="23" selection-end-line="1251" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -49,8 +40,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://C:/Python27/Lib/site-packages/usb/_interop.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1088">
-                  <caret line="65" selection-start-line="65" selection-end-line="65" />
+                <state relative-caret-position="282">
+                  <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
                 </state>
               </provider>
             </entry>
@@ -59,11 +50,20 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://C:/Python27/Lib/site-packages/usb/backend/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="184">
+                  <caret line="234" column="32" selection-start-line="234" selection-start-column="32" selection-end-line="234" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://C:/Python27/Lib/site-packages/usb/core.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="1183" column="35" selection-start-line="1183" selection-start-column="35" selection-end-line="1183" selection-end-column="35" />
+                <state relative-caret-position="167">
+                  <caret line="230" selection-start-line="230" selection-end-line="230" />
                 </state>
               </provider>
             </entry>
@@ -78,6 +78,15 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>write</find>
+      <find>def write</find>
+      <find>config</find>
+      <find>items</find>
+      <find>cur_exp</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -178,8 +187,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -196,14 +205,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://C:/Python27/Lib/site-packages/usb/core.py</url>
-          <line>1268</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://C:/Python27/Lib/site-packages/usb/core.py</url>
-          <line>1247</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>199</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -216,26 +220,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python27/Lib/bsddb/dbrecio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="125" column="8" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/usb/backend/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="234" column="32" selection-start-line="234" selection-start-column="32" selection-end-line="234" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/usb/_interop.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="282">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/usb/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/usb/core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21114">
-          <caret line="1251" column="23" selection-start-line="1251" selection-start-column="23" selection-end-line="1251" selection-end-column="23" />
+        <state relative-caret-position="167">
+          <caret line="230" selection-start-line="230" selection-end-line="230" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="408">
+          <caret line="174" column="62" selection-start-line="174" selection-start-column="62" selection-end-line="174" selection-end-column="62" />
           <folding>
-            <element signature="e#165#180#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
