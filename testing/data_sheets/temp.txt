@@ -1,12 +1,12 @@
 Configuration:
   bLength=9
-  wTotalLength=75
+  wTotalLength=98
   bConfigurationValue=1
   bDescriptorType=2
   iConfiguration=0
   bMaxPower=50
   bmAttributes=128
-  bNumInterfaces=2
+  bNumInterfaces=3
     Interface:
       bLength=9
       bAlternateSetting=0
@@ -45,6 +45,30 @@ Configuration:
           bLength=7
           bEndpointAddress=130
           bInterval=0
+          bDescriptorType=5
+          bmAttributes=2
+          wMaxPacketSize=64
+    Interface:
+      bLength=9
+      bAlternateSetting=0
+      bInterfaceNumber=2
+      bNumEndpoints=2
+      bDescriptorType=4
+      bInterfaceSubClass=6
+      bInterfaceClass=8
+      bInterfaceProtocol=80
+      iInterface=5
+        Endpoint:
+          bLength=7
+          bEndpointAddress=3
+          bInterval=1
+          bDescriptorType=5
+          bmAttributes=2
+          wMaxPacketSize=64
+        Endpoint:
+          bLength=7
+          bEndpointAddress=131
+          bInterval=1
           bDescriptorType=5
           bmAttributes=2
           wMaxPacketSize=64

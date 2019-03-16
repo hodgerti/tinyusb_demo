@@ -5,7 +5,7 @@ Configuration:
   bNumInterfaces=TODO
   bConfigurationValue=TODO
   iConfiguration=TODO
-  bmAttributes=TODO
+  bmAttributes=128
   bMaxPower=TODO
     Interface:
       bLength=TODO

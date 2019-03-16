@@ -1,12 +1,14 @@
 import ctypes as c
+import itertools
 import sys
+from time import sleep
 from os import environ
 from os.path import exists
 import usb.core
 import usb.util
 
 
-from usb.backend import libusb1
+from usb.backend import libusb0
 
 from usb_def import (MSC_CLASS,
                      CDC_CLASS,
@@ -21,6 +23,9 @@ DEMO_CONFIGS_DATA_SHEET = '{}demo_config_data_sheet.txt'.format(DATA_SHEET_DIR)
 CONFIGS_RESULTS_SHEET = '{}configs_results.txt'.format(DATA_SHEET_DIR)
 BULK_FILE = '{}bulk_data.txt'.format(DATA_SHEET_DIR)
 TINY_BULK_FILE = '{}tiny_bulk_data.txt'.format(DATA_SHEET_DIR)
+BAD_TINY_BULK_FILE = '{}bad_tiny_bulk_data.txt'.format(DATA_SHEET_DIR)
+BULK_RESULTS_SHEET = '{}bulk_results.txt'.format(DATA_SHEET_DIR)
+TEMP = '{}temp.txt'.format(DATA_SHEET_DIR)
 
 PASS_MARK = '[0]'
 FAIL_MARK = '[X]'
@@ -60,6 +65,9 @@ def find_intf_class(cfg, cls=MSC_CLASS):
 
 def find_bulk_out(e):
     return usb.util.endpoint_direction(e.bEndpointAddress) == usb.util.ENDPOINT_OUT
+
+def find_bulk_in(e):
+    return usb.util.endpoint_direction(e.bEndpointAddress) == usb.util.ENDPOINT_IN
 
 def read_chunk(file, size):
     while True:
@@ -198,19 +206,36 @@ def compare_configs(act_configs, exp_configs, f_name=CONFIGS_RESULTS_SHEET):
                             f_out.write('{}{}{}={} / {}={}\n'.format(PASS_MARK, EP_DETAIL_SPACE, field, ep[field], field, cur_exp_ep[field]))
 
 def stream_file(cfg, f_name=TINY_BULK_FILE):
-    intf = find_intf_class(cfg, CDC_DATA)
-    assert intf is not None
-    endpoint = usb.util.find_descriptor(intf, custom_match=find_bulk_out)
-    assert endpoint is not None
+    intf = find_intf_class(cfg, CDC_CLASS)
+    endpoint_out = usb.util.find_descriptor(intf, custom_match=find_bulk_out)
+    endpoint_in = usb.util.find_descriptor(intf, custom_match=find_bulk_in)
+    assert endpoint_out is not None
+    assert endpoint_in is not None
+    out_buff = ''
+    in_buff = ''
     with open(f_name, 'rb') as f_in:
-        for data in read_chunk(f_in, endpoint.wMaxPacketSize):
-            endpoint.write(data)
+        for data in read_chunk(f_in, endpoint_out.wMaxPacketSize):
+            assert endpoint_out.write(data) == len(data)
+            out_buff += data
+            in_buff += endpoint_in.read(len(data))
+    return out_buff, in_buff
+
+def compare_buffs(out_buff, in_buff, f_name=BULK_RESULTS_SHEET):
+    out_lines = out_buff.split('\n')
+    in_lines = in_buff.split('\n')
+    with open(f_name, 'wb') as f_out:
+        for idx, (out_line, in_line) in enumerate(itertools.izip(out_lines, in_lines), 1):
+            if out_line != in_line:
+                f_out.write('{ln}:{incorrect} {o}\n{ln}:{neutral} {i}\n'.format(ln=idx, incorrect=FAIL_MARK, neutral=NEUTRAL_MARK, o=out_line, i=in_line))
+            else:
+                f_out.write('{ln}:{passing} {o}\n'.format(ln=idx, passing=PASS_MARK, o=out_line))
+
 
 def init(idVendor=0xcafe, idProduct=0x0001):
     # set environment
     environ['PYUSB_DEBUG'] = 'debug'
     # find our device
-    be = libusb1.get_backend()
+    be = libusb0.get_backend()
     _dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=be)
     # was it found?
     if _dev is None:
@@ -229,7 +254,8 @@ write_configs_sheet(act_configs)
 
 dev.set_configuration()
 cfg = dev.get_active_configuration()
-stream_file(cfg)
+out_buff, in_buff = stream_file(cfg)
+compare_buffs(out_buff, in_buff)
 
 # assert dev.ctrl_transfer(0x40, CTRL_LOOPBACK_WRITE, 0, 0, msg) == len(msg)
 # ret_msg = dev.ctrl_transfer(0xC0, CTRL_LOOPBACK_READ, 0, 0, len(msg))
